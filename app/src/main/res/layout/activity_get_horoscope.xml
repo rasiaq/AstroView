@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#30419f"
+    android:background="#243292"
     android:orientation="vertical"
     tools:context=".GetHoroscope">
 
@@ -24,6 +24,6 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="match_parent"
         android:layout_height="130dp"
-        android:background="#30419f" />
+        android:background="#243292" />
 
 </LinearLayout>
