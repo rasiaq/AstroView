@@ -43,7 +43,7 @@ public class HoroscopeMenu extends AppCompatActivity {
         setContentView(R.layout.activity_horoscope_menu);
 
         ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, zodiacSigns);
-        zodiacAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        zodiacAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         final Spinner zodiacSpinner = findViewById(R.id.zodiacSignSpinner);
         zodiacSpinner.setAdapter(zodiacAdapter);
@@ -62,7 +62,7 @@ public class HoroscopeMenu extends AppCompatActivity {
         });
 
         ArrayAdapter<String> horoscopeTypeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, horoscopeTypes);
-        horoscopeTypeAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        horoscopeTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         final Spinner horoscopeTypeSpinner = findViewById(R.id.horoscopeTypeSpinner);
         horoscopeTypeSpinner.setAdapter(horoscopeTypeAdapter);
