@@ -17,7 +17,7 @@ import okhttp3.Response;
 
 public class GetHoroscope extends AppCompatActivity {
 
-    private final int splashTime = 1500;
+    private final int splashTime = 1600;
 
     private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
     private String response;
