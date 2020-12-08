@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.os.Handler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -17,18 +17,20 @@ import okhttp3.Response;
 
 public class GetHoroscope extends AppCompatActivity {
 
+    private final int splashTime = 1500;
+
     private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
     private String response;
-    private String horoscopeResult;
-    private String sign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_horoscope);
-        sign = getIntent().getStringExtra("sign");
+        String sign = getIntent().getStringExtra("sign");
         String type = getIntent().getStringExtra("type");
         String requestURL = baseRequestURL + type + "/" + sign;
+
+        String horoscopeResult = "";
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -41,7 +43,9 @@ public class GetHoroscope extends AppCompatActivity {
         } catch (InterruptedException | JSONException e) {
             e.printStackTrace();
         }
+        runDisplayHoroscope(horoscopeResult, sign);
     }
+
 
     public void getResponse(final OkHttpClient okHttpClient, final Request request) throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
@@ -52,7 +56,6 @@ public class GetHoroscope extends AppCompatActivity {
                     resp = okHttpClient.newCall(request).execute();
                     if (resp.body() != null) {
                         response = resp.body().string();
-                        System.out.println("Zakończono");
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -68,9 +71,18 @@ public class GetHoroscope extends AppCompatActivity {
         return jsonObject.getString("horoscope");
     }
 
-    public void runDisplayHoroscope(View v) {
-        Intent intent = new Intent(this, DisplayHoroscope.class);
+    public void runDisplayHoroscope(String horoscope, String sign) {
+        final Intent intent = new Intent(this, DisplayHoroscope.class);
         intent.putExtra("sign", sign);
-        intent.putExtra("horoscope", horoscopeResult);
+        System.out.println(horoscope);
+        intent.putExtra("horoscope", horoscope);
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                finish();
+                startActivity(intent);
+            }
+        }, splashTime);
     }
 }
