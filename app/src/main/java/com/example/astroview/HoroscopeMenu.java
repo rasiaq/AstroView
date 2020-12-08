@@ -9,9 +9,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.Toast;
 
-public class HoroscopeActivity extends AppCompatActivity {
+public class HoroscopeMenu extends AppCompatActivity {
 
     private final String[] zodiacSigns = {
             "Aries",
@@ -36,12 +35,12 @@ public class HoroscopeActivity extends AppCompatActivity {
     };
 
     private String selectedSign = "Aries";
-    private String selectedType = "daily";
+    private String selectedType = "today";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_horoscope);
+        setContentView(R.layout.activity_horoscope_menu);
 
         ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, zodiacSigns);
         zodiacAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);

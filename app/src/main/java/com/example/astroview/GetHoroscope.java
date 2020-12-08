@@ -2,9 +2,10 @@ package com.example.astroview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -18,12 +19,14 @@ public class GetHoroscope extends AppCompatActivity {
 
     private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
     private String response;
+    private String horoscopeResult;
+    private String sign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_horoscope);
-        String sign = getIntent().getStringExtra("sign");
+        sign = getIntent().getStringExtra("sign");
         String type = getIntent().getStringExtra("type");
         String requestURL = baseRequestURL + type + "/" + sign;
 
@@ -34,15 +37,8 @@ public class GetHoroscope extends AppCompatActivity {
                 .build();
         try {
             getResponse(client, request);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        System.out.println(response);
-        try {
-            parseResponse();
-
-        } catch (JSONException e) {
+            horoscopeResult = parseResponse();
+        } catch (InterruptedException | JSONException e) {
             e.printStackTrace();
         }
     }
@@ -67,12 +63,14 @@ public class GetHoroscope extends AppCompatActivity {
         thread.join();
     }
 
-    public void parseResponse() throws JSONException {
-//        Response wygląda inaczej dla daily i inaczej dla pozostałych
+    public String parseResponse() throws JSONException {
         JSONObject jsonObject = new JSONObject(response);
-        JSONArray jsonArray = jsonObject.names();
-        String key = jsonArray.getString(0);
-        String value = jsonObject.getString(key);
-        System.out.println(key + " " + value);
+        return jsonObject.getString("horoscope");
+    }
+
+    public void runDisplayHoroscope(View v) {
+        Intent intent = new Intent(this, DisplayHoroscope.class);
+        intent.putExtra("sign", sign);
+        intent.putExtra("horoscope", horoscopeResult);
     }
 }

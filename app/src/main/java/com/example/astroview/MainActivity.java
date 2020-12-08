@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void test(View v) {
-        Intent intent = new Intent(this, HoroscopeActivity.class);
+        Intent intent = new Intent(this, HoroscopeMenu.class);
         startActivity(intent);
     }
 
