@@ -26,6 +26,7 @@ public class Register extends AppCompatActivity {
         newPassword = findViewById(R.id.newPassword);
         confPassword = findViewById(R.id.confPassword);
         wrongPasswordTV = findViewById(R.id.wrongPasswordTV);
+        signUpBtn = findViewById(R.id.signUpBtn);
         signUpBtn.setEnabled(false);
 
         confPassword.addTextChangedListener(new TextWatcher() {
