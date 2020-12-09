@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1090511765324",
+    "project_id": "astroview-8e4e8",
+    "storage_bucket": "astroview-8e4e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1090511765324:android:a7c10a406fa4cd3348d9e9",
+        "android_client_info": {
+          "package_name": "com.example.astroview"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1090511765324-aqj83jhoaav6sj6epaiino336lha5vbj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBECfSiYTQ1031d5fhzDmr6iNG0iV7e--A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1090511765324-aqj83jhoaav6sj6epaiino336lha5vbj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
