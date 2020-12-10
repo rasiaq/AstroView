@@ -84,7 +84,10 @@ public class Register extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             updateUI();
                         } else {
-
+                            if (task.getException() != null) {
+                                Toast.makeText(Register.this,
+                                        task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });

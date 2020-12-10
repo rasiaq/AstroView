@@ -45,8 +45,10 @@ public class Login extends AppCompatActivity {
                             updateUI();
 
                         } else {
-                            Toast.makeText(getBaseContext(), "Authentication failed.",
-                                    Toast.LENGTH_SHORT).show();
+                            if (task.getException() != null) {
+                                Toast.makeText(Login.this,
+                                        task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
                         }
                     }
                 });
