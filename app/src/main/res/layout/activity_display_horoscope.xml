@@ -82,7 +82,7 @@
         android:layout_gravity="center"
         android:background="#f65692"
         android:onClick="backToMenu"
-        android:text="Go back"
+        android:text="Main menu"
         android:textColor="#ffffff" />
 
 </LinearLayout>
