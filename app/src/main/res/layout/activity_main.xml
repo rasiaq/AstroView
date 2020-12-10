@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#f65692"
-            android:text="Log out"
+            android:onClick="quit"
+            android:text="Quit"
             android:textColor="#FFFFFF"
             android:textSize="16sp" />
 
