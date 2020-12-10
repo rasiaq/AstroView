@@ -26,7 +26,10 @@ public class DisplayHoroscope extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.progress_bar);
+        makeRequest();
+    }
 
+    public void makeRequest() {
         String sign = getIntent().getStringExtra("sign");
         String type = getIntent().getStringExtra("type");
         String requestURL = baseRequestURL + type + "/" + sign;
