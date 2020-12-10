@@ -71,6 +71,11 @@ public class Login extends AppCompatActivity {
 
         String userLogin = email.getText().toString().trim();
         String userPassword = password.getText().toString().trim();
+        if (userLogin.length() == 0 || userPassword.length() == 0) {
+            Toast.makeText(Login.this,
+                    "Please enter valid data", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
         mAuth.signInWithEmailAndPassword(userLogin, userPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
@@ -94,17 +99,13 @@ public class Login extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account.getIdToken());
             } catch (ApiException e) {
-                // Google Sign In failed, update UI appropriately
-                // ...
-                System.out.println(e.getStatusCode());
+                Toast.makeText(Login.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -116,18 +117,16 @@ public class Login extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
                             updateUI();
                         } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(Login.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this,
+                                    task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
                 });
     }
-
 
     public void updateUI() {
         Intent intent = new Intent(this, MainActivity.class);
