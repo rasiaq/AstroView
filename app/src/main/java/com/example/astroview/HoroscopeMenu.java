@@ -81,7 +81,7 @@ public class HoroscopeMenu extends AppCompatActivity {
     }
 
     public void runGetHoroscope(View v) {
-        Intent intent = new Intent(this, GetHoroscope.class);
+        Intent intent = new Intent(this, DisplayHoroscope.class);
         intent.putExtra("sign", selectedSign);
         intent.putExtra("type", selectedType);
         startActivity(intent);

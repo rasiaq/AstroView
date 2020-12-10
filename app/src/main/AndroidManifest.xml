@@ -16,7 +16,6 @@
         <activity android:name=".Login"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".DisplayHoroscope" />
-        <activity android:name=".GetHoroscope" />
         <activity android:name=".HoroscopeMenu" />
         <activity android:name=".MainActivity">
             <intent-filter>

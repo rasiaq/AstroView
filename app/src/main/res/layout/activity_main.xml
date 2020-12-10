@@ -56,7 +56,7 @@
                 android:layout_height="126dp"
                 android:layout_gravity="center"
                 android:layout_weight="1"
-                android:onClick="test"
+                android:onClick="runHoroscopeMenu"
                 app:srcCompat="@drawable/ic_tarot" />
 
         </androidx.cardview.widget.CardView>
