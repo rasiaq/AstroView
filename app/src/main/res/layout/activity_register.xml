@@ -102,8 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="#f65692"
-            android:text="Sign up"
-            android:textColor="#ffffff" />
+            android:onClick="signUp"
+            android:text="Sign up" />
     </LinearLayout>
 </LinearLayout>
