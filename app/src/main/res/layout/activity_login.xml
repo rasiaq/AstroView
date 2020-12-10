@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="232dp"
+        android:layout_height="235dp"
         android:background="#243292"
         android:orientation="vertical">
 
@@ -52,7 +52,7 @@
             android:layout_width="65dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:src="@drawable/ic_user" />
 
         <EditText
@@ -95,20 +95,26 @@
             android:text="or"
             android:textSize="20sp" />
 
-        <Button
-            android:id="@+id/button5"
-            android:layout_width="192dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:onClick="startRegister"
-            android:text="sign  up" />
-
         <com.google.android.gms.common.SignInButton
             android:id="@+id/sign_in_button"
-            android:layout_width="192dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        </com.google.android.gms.common.SignInButton>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="50dp"
+            android:drawableLeft="@drawable/ic_add_user"
+            android:onClick="startRegister"
+            android:text=" Create an account"
+            android:textColor="#243292"
+            android:textSize="18sp" />
 
     </LinearLayout>
+
 </LinearLayout>
