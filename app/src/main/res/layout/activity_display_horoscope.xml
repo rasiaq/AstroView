@@ -16,7 +16,27 @@
         android:gravity="center"
         android:text="TextView"
         android:textColor="#ffffff"
-        android:textSize="36sp" />
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/signTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/datesTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#ffffff"
+        android:textSize="20sp" />
 
     <Space
         android:layout_width="match_parent"
@@ -24,14 +44,15 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="292dp"
+        android:layout_height="333dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
+        android:layout_marginBottom="65dp"
         app:cardCornerRadius="8dp">
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="292dp"
+            android:layout_height="match_parent"
             android:background="#ffffff">
 
             <LinearLayout
@@ -54,30 +75,14 @@
         </ScrollView>
     </androidx.cardview.widget.CardView>
 
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="64dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="198dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:background="#f65692"
-        android:text="Get another horoscope"
-        android:textColor="#ffffff" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="43dp" />
-
     <Button
         android:id="@+id/button4"
         android:layout_width="198dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#f65692"
-        android:text="Menu"
+        android:onClick="backToMenu"
+        android:text="Go back"
         android:textColor="#ffffff" />
 
 </LinearLayout>

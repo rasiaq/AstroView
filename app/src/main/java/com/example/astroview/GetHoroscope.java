@@ -17,7 +17,7 @@ import okhttp3.Response;
 
 public class GetHoroscope extends AppCompatActivity {
 
-    private final int splashTime = 1600;
+    private final int splashTime = 1300;
 
     private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
     private String response;
@@ -30,7 +30,7 @@ public class GetHoroscope extends AppCompatActivity {
         String type = getIntent().getStringExtra("type");
         String requestURL = baseRequestURL + type + "/" + sign;
 
-        String horoscopeResult = "";
+        String[] horoscopeData = new String[2];
 
         final OkHttpClient client = new OkHttpClient();
         final Request request = new Request.Builder()
@@ -39,11 +39,11 @@ public class GetHoroscope extends AppCompatActivity {
                 .build();
         try {
             getResponse(client, request);
-            horoscopeResult = parseResponse();
+            horoscopeData = parseResponse(type);
         } catch (InterruptedException | JSONException e) {
             e.printStackTrace();
         }
-        runDisplayHoroscope(horoscopeResult, sign);
+        runDisplayHoroscope(horoscopeData, sign, type);
     }
 
 
@@ -66,17 +66,26 @@ public class GetHoroscope extends AppCompatActivity {
         thread.join();
     }
 
-    public String parseResponse() throws JSONException {
+    public String[] parseResponse(String type) throws JSONException {
+        String[] values = new String[2];
         JSONObject jsonObject = new JSONObject(response);
-        return jsonObject.getString("horoscope");
+        if (type.equals("today")) {
+            values[0] = jsonObject.getString("date");
+        } else {
+            values[0] = jsonObject.getString(type);
+        }
+        values[1] = jsonObject.getString("horoscope");
+        return values;
     }
 
-    public void runDisplayHoroscope(String horoscope, String sign) {
+    public void runDisplayHoroscope(String[] horoscopeData, String sign, String type) {
         final Intent intent = new Intent(this, DisplayHoroscope.class);
         intent.putExtra("sign", sign);
-        System.out.println(horoscope);
-        intent.putExtra("horoscope", horoscope);
-        Handler handler = new Handler();
+        intent.putExtra("dates", horoscopeData[0]);
+        System.out.println(horoscopeData[0]);
+        intent.putExtra("horoscope", horoscopeData[1]);
+        System.out.println(horoscopeData[1]);
+        Handler handler = new Handler(); // for visual purpose only
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {

@@ -13,12 +13,12 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         >
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Login"></activity>
         <activity android:name=".Register"></activity>
         <activity android:name=".DisplayHoroscope" />
         <activity android:name=".GetHoroscope" />
         <activity android:name=".HoroscopeMenu" />
-        <activity android:name=".Login">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
