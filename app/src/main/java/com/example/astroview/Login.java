@@ -7,20 +7,18 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class Login extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private EditText login;
+    private EditText email;
     private EditText password;
 
     @Override
@@ -29,14 +27,14 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        login = findViewById(R.id.login);
+        email = findViewById(R.id.email);
         password = findViewById(R.id.password);
 
     }
 
     public void signInUser(View view) {
 
-        String userLogin = login.getText().toString().trim();
+        String userLogin = email.getText().toString().trim();
         String userPassword = password.getText().toString().trim();
 
         mAuth.signInWithEmailAndPassword(userLogin, userPassword)
@@ -56,6 +54,12 @@ public class Login extends AppCompatActivity {
 
     public void updateUI() {
         Intent intent = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(intent);
+    }
+
+    public void startRegister(View view) {
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
 
