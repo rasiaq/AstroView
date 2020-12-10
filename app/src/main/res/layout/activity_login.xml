@@ -9,14 +9,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="277dp"
+        android:layout_height="232dp"
         android:background="#243292"
         android:orientation="vertical">
 
         <ImageView
             android:id="@+id/zodiacIconImage"
-            android:layout_width="251dp"
-            android:layout_height="150dp"
+            android:layout_width="220dp"
+            android:layout_height="114dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
@@ -52,7 +52,7 @@
             android:layout_width="65dp"
             android:layout_height="48dp"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:src="@drawable/ic_user" />
 
         <EditText
@@ -60,7 +60,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:gravity="center"
             android:hint="E-mail"
@@ -90,8 +90,7 @@
             android:id="@+id/textView11"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="5dp"
             android:gravity="center"
             android:text="or"
             android:textSize="20sp" />
@@ -103,5 +102,13 @@
             android:layout_gravity="center"
             android:onClick="startRegister"
             android:text="sign  up" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="192dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp" />
+
     </LinearLayout>
 </LinearLayout>
