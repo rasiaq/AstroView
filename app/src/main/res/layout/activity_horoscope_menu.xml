@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#243292"
     android:orientation="vertical"
-    tools:context=".HoroscopeMenu">
+    tools:context=".HoroscopeMenuActivity">
 
     <TextView
         android:id="@+id/textView2"

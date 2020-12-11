@@ -17,12 +17,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void runHoroscopeMenu(View v) {
-        Intent intent = new Intent(this, HoroscopeMenu.class);
+        Intent intent = new Intent(this, HoroscopeMenuActivity.class);
         startActivity(intent);
     }
 
     public void signOut(View v) {
-        Intent intent = new Intent(this, Login.class);
+        Intent intent = new Intent(this, SignInActivity.class);
         FirebaseAuth.getInstance().signOut();
         startActivity(intent);
         finish();

@@ -14,10 +14,10 @@
         android:usesCleartextTraffic="true"
         >
         <activity android:name=".MainActivity"></activity>
-        <activity android:name=".Register"></activity>
-        <activity android:name=".DisplayHoroscope" />
-        <activity android:name=".HoroscopeMenu" />
-        <activity android:name=".Login">
+        <activity android:name=".SignUpActivity"></activity>
+        <activity android:name=".DisplayHoroscopeActivity" />
+        <activity android:name=".HoroscopeMenuActivity" />
+        <activity android:name=".SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

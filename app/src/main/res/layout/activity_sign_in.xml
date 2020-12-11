@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Register">
+    tools:context=".SignInActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -14,29 +14,30 @@
         android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/imageView3"
+            android:id="@+id/zodiacIconImage"
             android:layout_width="220dp"
             android:layout_height="114dp"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="15dp"
-            android:src="@drawable/ic_orbit" />
+            android:background="#243292"
+            android:src="@drawable/ic_astrology" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="We talk to the real stars."
+            android:text="Know your fate."
             android:textColor="#ffffff"
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/textView10"
+            android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Wanna know what they say?"
+            android:text="With just one click."
             android:textColor="#ffffff"
             android:textSize="30sp" />
     </LinearLayout>
@@ -55,18 +56,18 @@
             android:src="@drawable/ic_user" />
 
         <EditText
-            android:id="@+id/newEmail"
+            android:id="@+id/email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:gravity="center"
-            android:hint="Email"
+            android:hint="E-mail"
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/newPassword"
+            android:id="@+id/password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -76,33 +77,44 @@
             android:hint="Password"
             android:inputType="textPassword" />
 
-        <EditText
-            android:id="@+id/confPassword"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Confirm password"
-            android:inputType="textPassword" />
-
-        <TextView
-            android:id="@+id/wrongPasswordTV"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text=""
-            android:textColor="#F32121" />
-
         <Button
-            android:id="@+id/signUpBtn"
+            android:id="@+id/signInBtn"
             android:layout_width="192dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:onClick="signUp"
-            android:text="Sign up" />
+            android:onClick="signInUser"
+            android:text="Sign in" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center"
+            android:text="or"
+            android:textSize="20sp" />
+
+        <com.google.android.gms.common.SignInButton
+            android:id="@+id/sign_in_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+        </com.google.android.gms.common.SignInButton>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:drawableLeft="@drawable/ic_add_user"
+            android:onClick="startRegister"
+            android:text=" Create an account"
+            android:textColor="#243292"
+            android:textSize="18sp" />
+
     </LinearLayout>
+
 </LinearLayout>

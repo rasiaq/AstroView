@@ -17,7 +17,7 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 
-public class DisplayHoroscope extends AppCompatActivity {
+public class DisplayHoroscopeActivity extends AppCompatActivity {
 
     private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
     private String response;
@@ -93,7 +93,7 @@ public class DisplayHoroscope extends AppCompatActivity {
 
 
     public void backToMenu(View view) {
-        Intent intent = new Intent(DisplayHoroscope.this, MainActivity.class);
+        Intent intent = new Intent(DisplayHoroscopeActivity.this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

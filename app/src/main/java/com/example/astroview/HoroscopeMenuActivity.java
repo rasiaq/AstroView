@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
-public class HoroscopeMenu extends AppCompatActivity {
+public class HoroscopeMenuActivity extends AppCompatActivity {
 
     private final String[] zodiacSigns = {
             "Aries",
@@ -81,7 +81,7 @@ public class HoroscopeMenu extends AppCompatActivity {
     }
 
     public void runGetHoroscope(View v) {
-        Intent intent = new Intent(this, DisplayHoroscope.class);
+        Intent intent = new Intent(this, DisplayHoroscopeActivity.class);
         intent.putExtra("sign", selectedSign);
         intent.putExtra("type", selectedType);
         startActivity(intent);
