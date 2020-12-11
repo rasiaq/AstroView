@@ -12,7 +12,7 @@ import android.widget.Spinner;
 
 public class HoroscopeMenuActivity extends AppCompatActivity {
 
-    private final String[] zodiacSigns = {
+    private final String[] mZodiacSigns = {
             "Aries",
             "Taurus",
             "Gemini",
@@ -27,22 +27,22 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
             "Pisces"
     };
 
-    private final String[] horoscopeTypes = {
+    private final String[] mHoroscopeTypes = {
             "Today",
             "Week",
             "Month",
             "Year"
     };
 
-    private String selectedSign = "Aries";
-    private String selectedType = "today";
+    private String mSelectedSign = "Aries";
+    private String mSelectedType = "today";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horoscope_menu);
 
-        ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, zodiacSigns);
+        ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mZodiacSigns);
         zodiacAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         final Spinner zodiacSpinner = findViewById(R.id.zodiacSignSpinner);
@@ -51,7 +51,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         zodiacSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedSign = zodiacSigns[position];
+                mSelectedSign = mZodiacSigns[position];
                 changeIconOnItemSelected(position);
             }
 
@@ -61,7 +61,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
             }
         });
 
-        ArrayAdapter<String> horoscopeTypeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, horoscopeTypes);
+        ArrayAdapter<String> horoscopeTypeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mHoroscopeTypes);
         horoscopeTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
         final Spinner horoscopeTypeSpinner = findViewById(R.id.horoscopeTypeSpinner);
@@ -70,7 +70,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         horoscopeTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                selectedType = horoscopeTypes[position].toLowerCase();
+                mSelectedType = mHoroscopeTypes[position].toLowerCase();
             }
 
             @Override
@@ -82,8 +82,8 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
 
     public void runGetHoroscope(View v) {
         Intent intent = new Intent(this, DisplayHoroscopeActivity.class);
-        intent.putExtra("sign", selectedSign);
-        intent.putExtra("type", selectedType);
+        intent.putExtra("sign", mSelectedSign);
+        intent.putExtra("type", mSelectedType);
         startActivity(intent);
     }
 

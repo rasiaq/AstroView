@@ -19,8 +19,8 @@ import okhttp3.Response;
 
 public class DisplayHoroscopeActivity extends AppCompatActivity {
 
-    private final String baseRequestURL = "http://horoscope-api.herokuapp.com/horoscope/";
-    private String response;
+    private static final String BASE_REQUEST_URL = "http://horoscope-api.herokuapp.com/horoscope/";
+    private String mResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,10 +29,10 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
         makeRequest();
     }
 
-    public void makeRequest() {
+    private void makeRequest() {
         String sign = getIntent().getStringExtra("sign");
         String type = getIntent().getStringExtra("type");
-        String requestURL = baseRequestURL + type + "/" + sign;
+        String requestURL = BASE_REQUEST_URL + type + "/" + sign;
         String[] data = new String[2];
 
         final OkHttpClient client = new OkHttpClient();
@@ -50,7 +50,7 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
         setView(sign, data[0], data[1]);
     }
 
-    public void getResponse(final OkHttpClient okHttpClient, final Request request) throws InterruptedException {
+    private void getResponse(final OkHttpClient okHttpClient, final Request request) throws InterruptedException {
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -58,7 +58,7 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
                 try {
                     resp = okHttpClient.newCall(request).execute();
                     if (resp.body() != null) {
-                        response = resp.body().string();
+                        mResponse = resp.body().string();
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -69,9 +69,9 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
         thread.join();
     }
 
-    public String[] extractData(String type) throws JSONException {
+    private String[] extractData(String type) throws JSONException {
         String[] values = new String[2];
-        JSONObject jsonObject = new JSONObject(response);
+        JSONObject jsonObject = new JSONObject(mResponse);
         if (type.equals("today")) {
             values[0] = jsonObject.getString("date");
         } else {
@@ -81,7 +81,7 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
         return values;
     }
 
-    public void setView(String sign, String dates, String horoscope) {
+    private void setView(String sign, String dates, String horoscope) {
         setContentView(R.layout.activity_display_horoscope);
         TextView signTV = findViewById(R.id.signTV);
         signTV.setText(sign);
