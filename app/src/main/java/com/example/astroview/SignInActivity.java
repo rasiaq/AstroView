@@ -30,8 +30,8 @@ public class SignInActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
 
-    private EditText email;
-    private EditText password;
+    private EditText mEmail;
+    private EditText mPassword;
 
     @Override
     protected void onStart() {
@@ -46,8 +46,8 @@ public class SignInActivity extends AppCompatActivity {
         setContentView(R.layout.activity_sign_in);
 
         mAuth = FirebaseAuth.getInstance();
-        email = findViewById(R.id.email);
-        password = findViewById(R.id.password);
+        mEmail = findViewById(R.id.input_email);
+        mPassword = findViewById(R.id.input_password);
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
@@ -68,8 +68,8 @@ public class SignInActivity extends AppCompatActivity {
 
     public void signInUser(View view) {
 
-        String userLogin = email.getText().toString().trim();
-        String userPassword = password.getText().toString().trim();
+        String userLogin = mEmail.getText().toString().trim();
+        String userPassword = mPassword.getText().toString().trim();
         if (userLogin.length() == 0 || userPassword.length() == 0) {
             Toast.makeText(SignInActivity.this,
                     "Please enter valid data", Toast.LENGTH_SHORT).show();
@@ -127,7 +127,7 @@ public class SignInActivity extends AppCompatActivity {
                 });
     }
 
-    public void updateUI() {
+    private void updateUI() {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
         finish();

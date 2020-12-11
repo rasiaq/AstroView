@@ -24,11 +24,11 @@ public class SignUpActivity extends AppCompatActivity {
 
     private FirebaseAuth mAuth;
 
-    private EditText newEmail;
-    private EditText newPassword;
-    private EditText confPassword;
-    private TextView wrongPasswordTV;
-    private Button signUpBtn;
+    private EditText mEditTextNewEmail;
+    private EditText mEditTextNewPassword;
+    private EditText mEditTextConfPassword;
+    private TextView mTextViewPassword;
+    private Button mButtonSignIn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,15 +37,14 @@ public class SignUpActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
+        mEditTextNewEmail = findViewById(R.id.input_new_email);
+        mEditTextNewPassword = findViewById(R.id.input_new_password);
+        mEditTextConfPassword = findViewById(R.id.input_conf_password);
+        mTextViewPassword = findViewById(R.id.text_wrong_password);
+        mButtonSignIn = findViewById(R.id.button_sign_up);
+        mButtonSignIn.setEnabled(false);
 
-        newEmail = findViewById(R.id.newEmail);
-        newPassword = findViewById(R.id.newPassword);
-        confPassword = findViewById(R.id.confPassword);
-        wrongPasswordTV = findViewById(R.id.wrongPasswordTV);
-        signUpBtn = findViewById(R.id.signUpBtn);
-        signUpBtn.setEnabled(false);
-
-        confPassword.addTextChangedListener(new TextWatcher() {
+        mEditTextConfPassword.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
             }
@@ -56,15 +55,15 @@ public class SignUpActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                String pass1 = newPassword.getText().toString();
-                String pass2 = confPassword.getText().toString();
+                String pass1 = mEditTextNewPassword.getText().toString();
+                String pass2 = mEditTextConfPassword.getText().toString();
                 if (!pass1.equals(pass2)) {
-                    wrongPasswordTV.setText("Passwords don't match");
-                    signUpBtn.setEnabled(false);
-                    if (!signUpBtn.isEnabled()) signUpBtn.setEnabled(false);
+                    mTextViewPassword.setText("Passwords don't match");
+                    mButtonSignIn.setEnabled(false);
+                    if (!mButtonSignIn.isEnabled()) mButtonSignIn.setEnabled(false);
                 } else {
-                    wrongPasswordTV.setText("");
-                    signUpBtn.setEnabled(true);
+                    mTextViewPassword.setText("");
+                    mButtonSignIn.setEnabled(true);
                 }
             }
         });
@@ -78,9 +77,9 @@ public class SignUpActivity extends AppCompatActivity {
     }
 
     public void signUp(View view) {
-        String email = newEmail.getText().toString().trim();
+        String email = mEditTextNewEmail.getText().toString().trim();
         System.out.println(email);
-        String password = newPassword.getText().toString();
+        String password = mEditTextNewPassword.getText().toString();
         System.out.println(password);
 
         mAuth.createUserWithEmailAndPassword(email, password)
@@ -99,7 +98,7 @@ public class SignUpActivity extends AppCompatActivity {
                 });
     }
 
-    public void updateUI() {
+    private void updateUI() {
         final Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Registration was successful - you will be logged in now!")

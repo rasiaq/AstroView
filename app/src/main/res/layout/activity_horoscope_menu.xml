@@ -41,7 +41,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/zodiacIconImage"
+                    android:id="@+id/image_zodiac_icon"
                     android:layout_width="251dp"
                     android:layout_height="150dp"
                     android:layout_gravity="center"
@@ -65,7 +65,7 @@
                         android:textSize="20sp" />
 
                     <Spinner
-                        android:id="@+id/zodiacSignSpinner"
+                        android:id="@+id/spinner_zodiac_sign"
                         style="@style/Widget.AppCompat.Spinner"
                         android:layout_width="180dp"
                         android:layout_height="?attr/dropdownListPreferredItemHeight"
@@ -95,7 +95,7 @@
                         android:textSize="20sp" />
 
                     <Spinner
-                        android:id="@+id/horoscopeTypeSpinner"
+                        android:id="@+id/spinner_horoscope_type"
                         style="@style/Widget.AppCompat.Spinner"
                         android:layout_width="180dp"
                         android:layout_height="?attr/dropdownListPreferredItemHeight"

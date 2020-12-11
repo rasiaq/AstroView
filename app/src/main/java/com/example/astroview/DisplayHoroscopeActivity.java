@@ -83,11 +83,11 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
 
     private void setView(String sign, String dates, String horoscope) {
         setContentView(R.layout.activity_display_horoscope);
-        TextView signTV = findViewById(R.id.signTV);
+        TextView signTV = findViewById(R.id.text_sign);
         signTV.setText(sign);
-        TextView datesTV = findViewById(R.id.datesTV);
+        TextView datesTV = findViewById(R.id.text_dates);
         datesTV.setText(dates);
-        TextView horoscopeTV = findViewById(R.id.horoscopeTextView);
+        TextView horoscopeTV = findViewById(R.id.text_horoscope);
         horoscopeTV.setText(horoscope);
     }
 

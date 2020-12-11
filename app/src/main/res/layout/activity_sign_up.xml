@@ -55,7 +55,7 @@
             android:src="@drawable/ic_user" />
 
         <EditText
-            android:id="@+id/newEmail"
+            android:id="@+id/input_new_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -66,7 +66,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/newPassword"
+            android:id="@+id/input_new_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -77,7 +77,7 @@
             android:inputType="textPassword" />
 
         <EditText
-            android:id="@+id/confPassword"
+            android:id="@+id/input_conf_password"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -89,7 +89,7 @@
             android:inputType="textPassword" />
 
         <TextView
-            android:id="@+id/wrongPasswordTV"
+            android:id="@+id/text_wrong_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
@@ -97,7 +97,7 @@
             android:textColor="#F32121" />
 
         <Button
-            android:id="@+id/signUpBtn"
+            android:id="@+id/button_sign_up"
             android:layout_width="192dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"

@@ -45,7 +45,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mZodiacSigns);
         zodiacAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        final Spinner zodiacSpinner = findViewById(R.id.zodiacSignSpinner);
+        final Spinner zodiacSpinner = findViewById(R.id.spinner_zodiac_sign);
         zodiacSpinner.setAdapter(zodiacAdapter);
 
         zodiacSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -64,7 +64,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         ArrayAdapter<String> horoscopeTypeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mHoroscopeTypes);
         horoscopeTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
-        final Spinner horoscopeTypeSpinner = findViewById(R.id.horoscopeTypeSpinner);
+        final Spinner horoscopeTypeSpinner = findViewById(R.id.spinner_horoscope_type);
         horoscopeTypeSpinner.setAdapter(horoscopeTypeAdapter);
 
         horoscopeTypeSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -88,7 +88,7 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
     }
 
     public void changeIconOnItemSelected(int position) {
-        ImageView zodiacIcon = findViewById(R.id.zodiacIconImage);
+        ImageView zodiacIcon = findViewById(R.id.image_zodiac_icon);
         switch (position) {
             case 0:
                 zodiacIcon.setImageResource(R.drawable.icon_aries);
