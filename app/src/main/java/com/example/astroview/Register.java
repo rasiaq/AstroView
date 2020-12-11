@@ -71,6 +71,13 @@ public class Register extends AppCompatActivity {
         });
     }
 
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(Register.this, Login.class);
+        startActivity(intent);
+        finish();
+    }
+
     public void signUp(View view) {
         String email = newEmail.getText().toString().trim();
         System.out.println(email);
@@ -94,14 +101,14 @@ public class Register extends AppCompatActivity {
     }
 
     public void updateUI() {
-        final Intent intent = new Intent(this, Login.class);
+        final Intent intent = new Intent(Register.this, Login.class);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Registration was successful - you can login now!")
+        builder.setMessage("Registration was successful - you will be logged in now!")
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        finish();
                         startActivity(intent);
+                        finish();
                     }
                 });
         AlertDialog alert = builder.create();
