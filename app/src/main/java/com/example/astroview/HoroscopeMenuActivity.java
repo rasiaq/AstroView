@@ -91,40 +91,40 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         ImageView zodiacIcon = findViewById(R.id.image_zodiac_icon);
         switch (position) {
             case 0:
-                zodiacIcon.setImageResource(R.drawable.icon_aries);
+                zodiacIcon.setImageResource(R.drawable.ic_aries);
                 break;
             case 1:
-                zodiacIcon.setImageResource(R.drawable.icon_taurus);
+                zodiacIcon.setImageResource(R.drawable.ic_taurus);
                 break;
             case 2:
-                zodiacIcon.setImageResource(R.drawable.icon_gemini);
+                zodiacIcon.setImageResource(R.drawable.ic_gemini);
                 break;
             case 3:
-                zodiacIcon.setImageResource(R.drawable.icon_cancer);
+                zodiacIcon.setImageResource(R.drawable.ic_cancer);
                 break;
             case 4:
-                zodiacIcon.setImageResource(R.drawable.icon_leo);
+                zodiacIcon.setImageResource(R.drawable.ic_leo);
                 break;
             case 5:
-                zodiacIcon.setImageResource(R.drawable.icon_virgo);
+                zodiacIcon.setImageResource(R.drawable.ic_virgo);
                 break;
             case 6:
-                zodiacIcon.setImageResource(R.drawable.icon_libra);
+                zodiacIcon.setImageResource(R.drawable.ic_libra);
                 break;
             case 7:
-                zodiacIcon.setImageResource(R.drawable.icon_scorpio);
+                zodiacIcon.setImageResource(R.drawable.ic_scorpio);
                 break;
             case 8:
-                zodiacIcon.setImageResource(R.drawable.icon_sagittarius);
+                zodiacIcon.setImageResource(R.drawable.ic_sagittarius);
                 break;
             case 9:
-                zodiacIcon.setImageResource(R.drawable.icon_capricorn);
+                zodiacIcon.setImageResource(R.drawable.ic_capricorn);
                 break;
             case 10:
-                zodiacIcon.setImageResource(R.drawable.icon_aquarius);
+                zodiacIcon.setImageResource(R.drawable.ic_aquarius);
                 break;
             case 11:
-                zodiacIcon.setImageResource(R.drawable.icon_pisces);
+                zodiacIcon.setImageResource(R.drawable.ic_pisces);
                 break;
         }
     }
