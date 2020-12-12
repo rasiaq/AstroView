@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="15dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="@font/open_sans"
         android:gravity="center"
         android:text="Welcome to  AstroView"
         android:textColor="#FFFFFF"
@@ -32,6 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/open_sans"
             android:text="Horoscope"
             android:textColor="#ffffff"
             android:textSize="20sp" />
@@ -60,6 +61,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="5dp"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="About the author"
             android:textColor="#ffffff"
@@ -88,6 +90,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="#f65692"
+            android:fontFamily="@font/open_sans"
             android:onClick="signOut"
             android:text="sign out"
             android:textColor="#FFFFFF"
@@ -99,6 +102,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             android:background="#ffffff"
+            android:fontFamily="@font/open_sans"
             android:onClick="quit"
             android:text="Quit" />
     </LinearLayout>

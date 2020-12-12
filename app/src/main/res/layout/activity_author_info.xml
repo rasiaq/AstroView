@@ -15,6 +15,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
+        android:fontFamily="@font/open_sans"
         android:text="Hi, "
         android:textColor="#ffffff"
         android:textSize="40sp" />
@@ -26,9 +27,10 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
+        android:fontFamily="@font/open_sans"
         android:text="My name is Peter and I'm currenty in the third year of Computer Science at the Wroclaw University of Science and Technology. Here is my GitHub profile:"
         android:textColor="#ffffff"
-        android:textSize="23sp" />
+        android:textSize="21sp" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -47,6 +49,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
+        android:fontFamily="@font/open_sans"
         android:text="This app was made as a part of passing programming course. Feel free to download it, modify and use for your own purpose. "
         android:textColor="#ffffff"
         android:textSize="23sp" />
@@ -59,9 +62,10 @@
         android:layout_marginTop="5dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="50dp"
+        android:fontFamily="@font/open_sans"
         android:text="Icons used in the app comes from www.flaticon.com. Specific authors are listed in readme.md file."
         android:textColor="#ffffff"
-        android:textSize="23sp" />
+        android:textSize="21sp" />
 
     <Button
         android:id="@+id/button4"
@@ -69,6 +73,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="#f65692"
+        android:fontFamily="@font/open_sans"
         android:onClick="backToMenu"
         android:text="Back to menu"
         android:textColor="#ffffff" />

@@ -27,6 +27,7 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="Know your fate."
             android:textColor="#ffffff"
@@ -36,6 +37,7 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="With just one click."
             android:textColor="#ffffff"
@@ -62,6 +64,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="8dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="E-mail"
             android:inputType="textPersonName" />
@@ -73,6 +76,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword" />
@@ -83,6 +87,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
             android:onClick="signInUser"
             android:text="Sign in" />
 
@@ -110,6 +115,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="45dp"
             android:drawableLeft="@drawable/ic_add_user"
+            android:fontFamily="@font/open_sans"
             android:onClick="startRegister"
             android:text=" Create an account"
             android:textColor="#243292"

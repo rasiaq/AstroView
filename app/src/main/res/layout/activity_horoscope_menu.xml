@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
+        android:fontFamily="@font/open_sans"
         android:gravity="center"
         android:text="Get your horoscope"
         android:textColor="#ffffff"
@@ -118,15 +119,10 @@
         android:id="@+id/textView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/open_sans"
         android:gravity="center"
         android:text="Now shake your phone and see what the future holds!"
         android:textColor="#ffffff"
         android:textSize="36sp" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="runGetHoroscope"
-        android:text="Button" />
 </LinearLayout>

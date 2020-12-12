@@ -2,7 +2,12 @@ package com.example.astroview;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -37,11 +42,33 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
     private String mSelectedSign = "Aries";
     private String mSelectedType = "today";
 
+    private SensorManager mSensorManager;
+    private SensorEventListener mSensorEventListener;
+    private float mAccelCurrent;
+    private float mAccelLast;
+    private float mShakeVal;
+    private static final float MIN_ACCEL_VALUE = 0.2f;
+
+    @Override
+    protected void onPause() {
+        mSensorManager.unregisterListener(mSensorEventListener);
+        super.onPause();
+    }
+
+    @Override
+    protected void onPostResume() {
+        super.onPostResume();
+        mSensorManager.registerListener(mSensorEventListener,
+                mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_horoscope_menu);
 
+        // [START zodiac_spinner_configuration]
         ArrayAdapter<String> zodiacAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mZodiacSigns);
         zodiacAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -60,7 +87,9 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
 
             }
         });
+        // [END zodiac_spinner_configuration]
 
+        // [START horoscope_type_configuration]
         ArrayAdapter<String> horoscopeTypeAdapter = new ArrayAdapter<>(this, R.layout.spinner_item_selected, mHoroscopeTypes);
         horoscopeTypeAdapter.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -78,10 +107,45 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
 
             }
         });
+        // [END horoscope_type_configuration]
+
+        // [START sensors_configuration]
+        mAccelCurrent = SensorManager.GRAVITY_EARTH;
+        mShakeVal = 0.00f;
+
+        mSensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);
+        mSensorEventListener = new SensorEventListener() {
+            @Override
+            public void onSensorChanged(SensorEvent event) {
+                System.out.println("Not even here?");
+                float x = event.values[0];
+                float y = event.values[1];
+                float z = event.values[2];
+
+                mAccelLast = mAccelCurrent;
+                mAccelCurrent = (float) Math.sqrt((double) x*x + y*y + z*z);
+                float diff = mAccelCurrent - mAccelLast;
+                mShakeVal = Math.abs(mShakeVal * 0.9f + diff);
+                System.out.println(mShakeVal);
+
+                if (mShakeVal > MIN_ACCEL_VALUE) runGetHoroscope();
+            }
+
+            @Override
+            public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+            }
+        };
+
+        mSensorManager.registerListener(mSensorEventListener,
+                mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),
+                SensorManager.SENSOR_DELAY_NORMAL);
+        //[END sensors_configuration]
+
     }
 
-    public void runGetHoroscope(View v) {
-        Intent intent = new Intent(this, DisplayHoroscopeActivity.class);
+    public void runGetHoroscope() {
+        Intent intent = new Intent(HoroscopeMenuActivity.this, DisplayHoroscopeActivity.class);
         intent.putExtra("sign", mSelectedSign);
         intent.putExtra("type", mSelectedType);
         startActivity(intent);

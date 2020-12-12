@@ -26,6 +26,7 @@
             android:id="@+id/textView9"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="We talk to the real stars."
             android:textColor="#ffffff"
@@ -35,6 +36,7 @@
             android:id="@+id/textView10"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="Wanna know what they say?"
             android:textColor="#ffffff"
@@ -61,6 +63,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Email"
             android:inputType="textPersonName" />
@@ -72,6 +75,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Password"
             android:inputType="textPassword" />
@@ -86,12 +90,14 @@
             android:ems="10"
             android:gravity="center"
             android:hint="Confirm password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:fontFamily="@font/open_sans" />
 
         <TextView
             android:id="@+id/text_wrong_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/open_sans"
             android:gravity="center_horizontal"
             android:text=""
             android:textColor="#F32121" />
@@ -102,6 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:fontFamily="@font/open_sans"
             android:onClick="signUp"
             android:text="Sign up" />
     </LinearLayout>
