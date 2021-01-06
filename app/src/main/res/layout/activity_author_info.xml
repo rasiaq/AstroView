@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#243292"
+    android:background="#16253F"
     android:orientation="vertical"
     tools:context=".AuthorInfoActivity">
 
@@ -17,7 +17,7 @@
         android:layout_marginRight="10dp"
         android:fontFamily="@font/open_sans"
         android:text="Hi, "
-        android:textColor="#ffffff"
+        android:textColor="#56FEFF"
         android:textSize="40sp" />
 
     <TextView
@@ -69,12 +69,13 @@
 
     <Button
         android:id="@+id/button4"
-        android:layout_width="138dp"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#f65692"
+        android:background="@drawable/cyan_border"
         android:fontFamily="@font/open_sans"
         android:onClick="backToMenu"
         android:text="Back to menu"
-        android:textColor="#ffffff" />
+        android:textColor="#ffffff"
+        android:textSize="16sp" />
 </LinearLayout>
