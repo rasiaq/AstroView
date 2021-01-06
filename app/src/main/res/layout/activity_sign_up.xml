@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="244dp"
-        android:background="#243292"
+        android:background="#16253F"
         android:orientation="vertical">
 
         <ImageView
@@ -46,6 +46,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#16253F"
         android:orientation="vertical">
 
         <ImageView
@@ -66,7 +67,10 @@
             android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Email"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"/>
 
         <EditText
             android:id="@+id/input_new_password"
@@ -78,7 +82,10 @@
             android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"/>
 
         <EditText
             android:id="@+id/input_conf_password"
@@ -88,10 +95,13 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:ems="10"
+            android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:hint="Confirm password"
             android:inputType="textPassword"
-            android:fontFamily="@font/open_sans" />
+            android:textColor="#FFFFFF"
+            android:textColorHint="#FFFFFF"
+            android:backgroundTint="#FFFFFF"/>
 
         <TextView
             android:id="@+id/text_wrong_password"
@@ -108,8 +118,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
+            android:background="#56FEFF"
             android:fontFamily="@font/open_sans"
             android:onClick="signUp"
-            android:text="Sign up" />
+            android:text="Sign up"
+            android:textColor="#16253F"
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>
