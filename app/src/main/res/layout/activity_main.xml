@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#243292"
+    android:background="#16253F"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -16,8 +16,8 @@
         android:layout_marginBottom="15dp"
         android:fontFamily="@font/open_sans"
         android:gravity="center"
-        android:text="Welcome to  AstroView"
-        android:textColor="#FFFFFF"
+        android:text="AstroView"
+        android:textColor="#56FEFF"
         android:textSize="40sp" />
 
     <LinearLayout
@@ -34,16 +34,23 @@
             android:layout_marginBottom="5dp"
             android:fontFamily="@font/open_sans"
             android:text="Horoscope"
-            android:textColor="#ffffff"
+            android:textColor="#56FEFF"
             android:textSize="20sp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
             android:layout_gravity="center"
             android:layout_marginBottom="40dp"
             android:layout_weight="1"
-            app:cardCornerRadius="8dp">
+            app:cardBackgroundColor="#16253F">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cyan_border">
+
+            </FrameLayout>
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -64,16 +71,23 @@
             android:fontFamily="@font/open_sans"
             android:gravity="center"
             android:text="About the author"
-            android:textColor="#ffffff"
+            android:textColor="#56FEFF"
             android:textSize="20sp" />
 
         <androidx.cardview.widget.CardView
-            android:layout_width="130dp"
-            android:layout_height="130dp"
+            android:layout_width="142dp"
+            android:layout_height="142dp"
             android:layout_gravity="center"
             android:layout_marginBottom="40dp"
             android:layout_weight="1"
-            app:cardCornerRadius="8dp">
+            app:cardBackgroundColor="#16253F">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/cyan_border">
+
+            </FrameLayout>
 
             <ImageView
                 android:id="@+id/imageView"
@@ -89,7 +103,7 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="#f65692"
+            android:background="@drawable/cyan_border"
             android:fontFamily="@font/open_sans"
             android:onClick="signOut"
             android:text="sign out"
@@ -101,10 +115,11 @@
             android:layout_width="160dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            android:background="#ffffff"
+            android:background="#56FEFF"
             android:fontFamily="@font/open_sans"
             android:onClick="quit"
-            android:text="Quit" />
+            android:text="Quit"
+            android:textColor="#16253F" />
     </LinearLayout>
 
 </LinearLayout>
