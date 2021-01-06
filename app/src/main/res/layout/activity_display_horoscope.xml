@@ -4,20 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#243292"
+    android:background="#16253F"
     android:orientation="vertical"
     tools:context=".DisplayHoroscopeActivity">
 
     <TextView
         android:id="@+id/text_sign"
-        android:layout_width="match_parent"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
+        android:background="@drawable/cyan_underline"
         android:fontFamily="@font/open_sans"
         android:gravity="center"
         android:text="Aries"
-        android:textColor="#ffffff"
+        android:textColor="#56FEFF"
         android:textSize="36sp" />
 
     <TextView
@@ -39,13 +41,18 @@
         android:layout_height="333dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginBottom="65dp"
-        app:cardCornerRadius="8dp">
+        android:layout_marginBottom="65dp">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#243292">
+            android:background="@drawable/cyan_border">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,14 +76,28 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button_back_to_menu"
-        android:layout_width="118dp"
+        android:id="@+id/button_another_one"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:background="#f65692"
+        android:background="@drawable/cyan_border"
+        android:fontFamily="@font/open_sans"
+        android:onClick="horoscopeMenu"
+        android:text="Horoscope menu"
+        android:textColor="#56FEFF"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/button_back_to_menu"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="15sp"
+        android:background="#56FEFF"
         android:fontFamily="@font/open_sans"
         android:onClick="backToMenu"
         android:text="Main menu"
-        android:textColor="#ffffff" />
+        android:textColor="#16253F"
+        android:textSize="16sp"/>
 
 </LinearLayout>

@@ -127,7 +127,10 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
                 mShakeVal = Math.abs(mShakeVal * 0.9f + diff);
                 System.out.println(mShakeVal);
 
-                if (mShakeVal > MIN_ACCEL_VALUE) runGetHoroscope();
+                if (mShakeVal > MIN_ACCEL_VALUE){
+                    runGetHoroscope();
+                    finish();
+                }
             }
 
             @Override

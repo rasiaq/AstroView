@@ -97,4 +97,10 @@ public class DisplayHoroscopeActivity extends AppCompatActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+    public void horoscopeMenu(View view) {
+        Intent intent = new Intent(DisplayHoroscopeActivity.this, HoroscopeMenuActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }
