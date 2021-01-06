@@ -117,7 +117,6 @@ public class HoroscopeMenuActivity extends AppCompatActivity {
         mSensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-                System.out.println("Not even here?");
                 float x = event.values[0];
                 float y = event.values[1];
                 float z = event.values[2];
