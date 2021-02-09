@@ -23,11 +23,12 @@ there will be displayed a simple form for user input - just select your zodiac s
 Sensors event listener will catch the move and make API request - the horoscope will be displayed in separate view.
 
 ## Screenshots
-Screenshots below presents basic activities such as Signin, Main menu and horoscope form
+Screenshots below presents basic activities such as **Sign in** and **Sign up**, **Main menu** and **Horoscope form**
 <div style="{display: flex; flex-direction: row;"}>
-<img width="300" alt="signin" src="https://user-images.githubusercontent.com/48965961/107415098-3acd0f00-6b13-11eb-86ab-b307612aa2e1.png">
-<img width="300" alt="mainmenu" src="https://user-images.githubusercontent.com/48965961/107415100-3c96d280-6b13-11eb-9fd6-2c60349474e8.png">
-<img width="300" alt="horoscope" src="https://user-images.githubusercontent.com/48965961/107415108-3e609600-6b13-11eb-9904-e28a77e770b2.png">
+<img width="250" alt="signin" src="https://user-images.githubusercontent.com/48965961/107415098-3acd0f00-6b13-11eb-86ab-b307612aa2e1.png">
+<img width="250" alt="signup" src="https://user-images.githubusercontent.com/48965961/107417509-f8590180-6b15-11eb-8f03-5fc331ffec4b.png">
+<img width="250" alt="mainmenu" src="https://user-images.githubusercontent.com/48965961/107415100-3c96d280-6b13-11eb-9fd6-2c60349474e8.png">
+<img width="250" alt="horoscope" src="https://user-images.githubusercontent.com/48965961/107415108-3e609600-6b13-11eb-9904-e28a77e770b2.png">
 </div>
 
 ## Credits
