@@ -32,5 +32,5 @@ Screenshots below presents basic activities such as **Sign in** and **Sign up**,
 </div>
 
 ## Credits
-* Icons used in AstroView are made by [Freepick](https://www.freepik.com) and [Vitaly Gorbachev](https://www.flaticon.com/authors/vitaly-gorbachev) from [Flaticon](https://www.flaticon.com/)
+* Icons used in AstroView are made by [Freepik](https://www.freepik.com) and [Vitaly Gorbachev](https://www.flaticon.com/authors/vitaly-gorbachev) from [Flaticon](https://www.flaticon.com/)
 * [Horoscope-API](https://github.com/tapaswenipathak/Horoscope-API) 
